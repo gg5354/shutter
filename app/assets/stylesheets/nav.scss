@@ -1,0 +1,23 @@
+.logo {
+  font-family: 'Ceviche One', cursive;
+  font-size: 3em;
+}
+
+.navbar-default {
+  .navbar-nav {
+    > li {
+      > a.logo {
+        color: $shutterGreen;
+
+        &:hover { color: $shutterGreenDark; }
+      }
+    }
+  }
+}
+
+#images {
+  div {
+    width: 397px;
+    height: 264px;
+  }
+}

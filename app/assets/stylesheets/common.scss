@@ -1,0 +1,24 @@
+html, body {
+  height: 150%;
+}
+
+body {
+  margin: 0;
+  padding-top: 55px;
+}
+
+@media (max-width: 991px) {
+  body {
+    padding-top: 105px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 340px;
+  }
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
