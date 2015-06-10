@@ -1,10 +1,15 @@
-#sign-up {
-  .modal-content {
-    width: 60%;
+#sign-up-modal, #sign-in-modal {
+  .modal-dialog {
+    width: 35%;
     margin: 0 auto;
   }
 
   button {
     width: 100%;
   }
+}
+
+body.modal-open {
+  overflow-y: scroll;
+  padding-right: 0 !important;
 }

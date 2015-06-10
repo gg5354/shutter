@@ -1,0 +1,31 @@
+<div id="sign-up-modal" class="modal fade" ng-controller="UserCtrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="First name" ng-model="user.first_name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Last name" ng-model="user.last_name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email address" ng-model="user.email" required>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password" required minlength="8">
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Confirm Password" ng-model="user.password_confirmation" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" ng-click="signUp()">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

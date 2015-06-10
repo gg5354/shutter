@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails', '~> 1.4.0'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'devise', '~> 3.5.1'
+gem 'ejs', '~> 1.1.1'
 
 group :development, :test do
   gem 'byebug'

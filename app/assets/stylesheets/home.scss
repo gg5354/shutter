@@ -1,0 +1,11 @@
+#images {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  div {
+    width: 397px;
+    height: 264px;
+    margin: 3px;
+  }
+}
