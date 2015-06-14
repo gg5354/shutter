@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :albums
+  has_many :photos
+  has_many :friends, -> { where status: Friend::STATUS[:accepted] }
 end

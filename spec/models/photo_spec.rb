@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Album do
+describe Photo do
+  it { is_expected.to belong_to :album }
   it { is_expected.to belong_to :user }
-  it { is_expected.to have_many :photos }
 end
