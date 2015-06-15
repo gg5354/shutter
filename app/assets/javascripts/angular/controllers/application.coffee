@@ -1,4 +1,5 @@
 angular.module 'Shutter'
        .controller 'ApplicationCtrl', ($scope) ->
-        $scope.current_user = ->
-          SHUTTER.current_user
+         Object.defineProperty $scope, 'current_user',
+           get: ->
+             SHUTTER.current_user

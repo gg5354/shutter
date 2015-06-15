@@ -1,4 +1,12 @@
-<div id="images">
+<div id="sidebar" ng-controller="SidebarCtrl" ng-show="current_user">
+  <ul>
+    <li ng-repeat="friend in friends">
+      {{ friend.email }}
+    </li>
+  </ul>
+</div>
+
+<div id="images" ng-show="!current_user">
   <% for (var i = 1; i < 4; i++) { %>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>

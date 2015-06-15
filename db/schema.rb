@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615031217) do
+ActiveRecord::Schema.define(version: 20150616044138) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,11 +23,11 @@ ActiveRecord::Schema.define(version: 20150615031217) do
   end
 
   create_table "friends", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.integer  "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_1",     null: false
+    t.integer  "user_2",     null: false
+    t.integer  "status",     null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -56,4 +57,6 @@ ActiveRecord::Schema.define(version: 20150615031217) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "friends", "users", column: "user_1"
+  add_foreign_key "friends", "users", column: "user_2"
 end

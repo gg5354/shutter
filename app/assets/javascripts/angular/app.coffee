@@ -32,10 +32,4 @@ angular.module 'Shutter', ['ui.router']
               extend baseView,
                 content:
                   template: JST['home']()
-          .state 'dashboard',
-            url: '/dashboard'
-            views:
-              extend baseView,
-                content:
-                  template: JST['dashboard']()
        ]

@@ -6,5 +6,12 @@ class User < ActiveRecord::Base
 
   has_many :albums
   has_many :photos
-  has_many :friends, -> { where status: Friend::STATUS[:accepted] }
+
+  def friends
+    ids = Friend.where('user_1 = ? OR user_2 = ?', self.id, self.id).map do |friend|
+      friend.user_1 == self.id ? friend.user_2 : friend.user_1
+    end
+
+    User.where(id: ids)
+  end
 end
