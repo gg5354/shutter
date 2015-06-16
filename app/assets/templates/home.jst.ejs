@@ -1,14 +1,23 @@
-<div id="sidebar" ng-controller="SidebarCtrl" ng-show="current_user">
-  <ul>
-    <li ng-repeat="friend in friends">
-      {{ friend.email }}
-    </li>
-  </ul>
-</div>
-
 <div id="images" ng-show="!current_user">
   <% for (var i = 1; i < 4; i++) { %>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>
   <% } %>
+</div>
+
+<div id="sidebar" ng-controller="SidebarCtrl" ng-show="current_user">
+  <ul class="list-unstyled">
+    <li id="friends-list">
+      <span class="glyphicon glyphicon-user"></span><a href="" ng-click="toggleFriendsList()">Friends</a>
+      <ul ng-show="showFriendsList" class="list-unstyled">
+        <li ng-repeat="friend in friends">
+          {{ friend.first_name + ' ' + friend.last_name }}
+        </li>
+      </ul>
+    </li>
+
+    <li id="albums">
+      <span class="glyphicon glyphicon-book"></span><a href="">Albums</a>
+    </li>
+  </ul>
 </div>
