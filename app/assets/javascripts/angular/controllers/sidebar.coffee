@@ -1,30 +1,33 @@
-angular.module 'Shutter'
-       .controller 'SidebarCtrl', ['$scope', '$http', ($scope, $http) ->
-         $scope.friends = []
-         $scope.albums = []
+class Shutter.Controller.SidebarCtrl extends Shutter.Controller.Base
+  __className__: 'SidebarCtrl'
 
-         $scope.showFriendsList = false
-         $scope.showAlbumsList = false
+  dependencies: ['$scope', '$http']
 
-         $scope.toggleFriendsList = ->
-           $scope.showFriendsList = !$scope.showFriendsList
-           fetchFriends() if $scope.showFriendsList
+  initialize: ->
+    @$scope.friends = []
+    @$scope.albums = []
+    @$scope.showFriendsList = false
+    @$scope.showAlbumsList = false
 
-         $scope.toggleAlbumsList = ->
-           $scope.showAlbumsList = !$scope.showAlbumsList
-           fetchAlbums() if $scope.showAlbumsList
+  scopeMethods:
+    toggleFriendsList: ->
+      @$scope.showFriendsList = !@$scope.showFriendsList
+      @$scope.fetchFriends()
 
-         fetchAlbums = ->
-            $http.get '/albums'
-              .success (albums) ->
-                $scope.albums = albums
-              .error ->
-                console.log 'error'
+    fetchFriends: ->
+      @$http.get '/friends'
+            .success (friends) =>
+              @$scope.friends = friends
+            .error ->
+              console.log 'error'
 
-         fetchFriends = ->
-           $http.get '/friends'
-                .success (friends) ->
-                  $scope.friends = friends
-                .error ->
-                  console.log 'error'
-       ]
+    toggleAlbumsList: ->
+      @$scope.showAlbumsList = !@$scope.showAlbumsList
+      @$scope.fetchAlbums()
+
+    fetchAlbums: ->
+      @$http.get '/albums'
+            .success (albums) =>
+              @$scope.albums = albums
+            .error ->
+              console.log 'error'

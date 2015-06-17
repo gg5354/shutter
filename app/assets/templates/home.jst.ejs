@@ -1,18 +1,18 @@
-<div id="images" ng-show="!current_user">
+<div id="images" ng-show="!currentUser">
   <% for (var i = 1; i < 4; i++) { %>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>
     <div style="background-image: url('/images/<%= i %>.jpg')"></div>
   <% } %>
 </div>
 
-<div id="sidebar" ng-controller="SidebarCtrl" ng-show="current_user">
+<div id="sidebar" ng-controller="SidebarCtrl" ng-show="currentUser">
   <ul class="list-unstyled">
     <li id="friends-list">
       <span class="glyphicon glyphicon-user"></span><a href="" ng-click="toggleFriendsList()">Friends</a>
 
       <ul ng-show="showFriendsList" class="list-unstyled">
         <li ng-repeat="friend in friends">
-          {{ friend.first_name + ' ' + friend.last_name }}
+          <a href="">{{ friend.first_name + ' ' + friend.last_name }}</a>
         </li>
       </ul>
     </li>
@@ -22,7 +22,7 @@
 
       <ul ng-show="showAlbumsList" class="list-unstyled">
         <li ng-repeat="album in albums">
-          {{ album.name }}
+          <a href="">{{ album.name }}</a>
         </li>
       </ul>
     </li>

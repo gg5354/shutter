@@ -1,5 +1,9 @@
-angular.module 'Shutter'
-       .controller 'ApplicationCtrl', ($scope) ->
-         Object.defineProperty $scope, 'current_user',
-           get: ->
-             SHUTTER.current_user
+class Shutter.Controller.ApplicationCtrl extends Shutter.Controller.Base
+  __className__: 'ApplicationCtrl'
+
+  dependencies: ['$scope']
+
+  initialize: ->
+    Object.defineProperty @$scope, 'currentUser',
+      get: ->
+        Shutter.currentUser

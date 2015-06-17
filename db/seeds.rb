@@ -1,6 +1,6 @@
 users = [
   {
-    first_name: 'Mark',
+    first_name: 'Matt',
     last_name: 'Daemon',
     email: 'mdaemon@aol.com',
     password: 'password123'

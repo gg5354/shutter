@@ -1,3 +1,6 @@
+window.Shutter = {}
+window.Shutter.Controller = {}
+
 angular.module 'Shutter', ['ui.router']
        .run ['$http', ($http) ->
           $http.defaults.headers.common.Accept = 'application/json'

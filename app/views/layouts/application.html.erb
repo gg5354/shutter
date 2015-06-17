@@ -7,9 +7,7 @@
   <%= csrf_meta_tags %>
   <base href="/">
   <script>
-    SHUTTER = {
-      current_user: <%= raw current_user ? current_user.to_json : 'null' %>
-    }
+    Shutter.currentUser = <%= raw current_user ? current_user.to_json : 'null' %>
   </script>
 </head>
 <body>
