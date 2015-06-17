@@ -9,6 +9,7 @@
   <ul class="list-unstyled">
     <li id="friends-list">
       <span class="glyphicon glyphicon-user"></span><a href="" ng-click="toggleFriendsList()">Friends</a>
+
       <ul ng-show="showFriendsList" class="list-unstyled">
         <li ng-repeat="friend in friends">
           {{ friend.first_name + ' ' + friend.last_name }}
@@ -16,8 +17,14 @@
       </ul>
     </li>
 
-    <li id="albums">
-      <span class="glyphicon glyphicon-book"></span><a href="">Albums</a>
+    <li id="albums-list">
+      <span class="glyphicon glyphicon-book"></span><a href="" ng-click="toggleAlbumsList()">Albums</a>
+
+      <ul ng-show="showAlbumsList" class="list-unstyled">
+        <li ng-repeat="album in albums">
+          {{ album.name }}
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

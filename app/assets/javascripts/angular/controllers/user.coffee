@@ -16,7 +16,6 @@ angular.module 'Shutter'
            $http.post '/users/sign_in', user: $scope.user
                 .success (user) ->
                   SHUTTER.current_user = user
-                  window.location.replace('/')
                   $('#sign-in-modal').modal('hide')
                   console.log 'success'
                 .error ->
