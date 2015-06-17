@@ -24,3 +24,6 @@ users = users.map do |user|
 end
 
 Friend.create! user_1: users[0].id, user_2: users[1].id
+%w(Hong\ Kong Australia UK).each do |name|
+  Album.create! name: name, user_id: users[0].id
+end
