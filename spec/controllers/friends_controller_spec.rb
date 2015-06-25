@@ -23,9 +23,10 @@ describe FriendsController do
 
         parsed = parse_response
         expect(parsed).to match_array([{
+          'id'         => friend.id,
           'first_name' => friend.first_name,
-          'last_name' => friend.last_name,
-          'email' => friend.email
+          'last_name'  => friend.last_name,
+          'email'      => friend.email
         }])
       end
     end

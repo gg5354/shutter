@@ -1,12 +1,34 @@
+$sidebarWidth: 20%;
+
 #sidebar {
-  width: 20%;
-
-  #friends-list ul {
-    padding-left: 5%;
-  }
-
-  #albums-list ul {
-    padding-left: 5%;
-  }
+  height: 100%;
+  width: $sidebarWidth;
+  position: fixed;
+  padding: 0 0.5em;
 }
 
+@mixin toggle {
+  position: fixed;
+  top: 50%;
+  z-index: 100;
+}
+
+#hide-sidebar {
+  @include toggle;
+  left: $sidebarWidth;
+  text-align: right;
+}
+
+#show-sidebar {
+  @include toggle;
+  text-align: left;
+}
+
+a.list-group-item {
+  background-color: $gray;
+  border: none;
+
+  &:hover {
+    background-color: silver;
+  }
+}

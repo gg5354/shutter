@@ -17,4 +17,6 @@
 //= require angular
 //= require angular-ui-router
 //= require_tree ../templates
-//= require_tree ./angular
+//= require ./angular/shutter
+//= require ./angular/config
+//= require ./angular/controllers

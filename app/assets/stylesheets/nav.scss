@@ -14,3 +14,19 @@
     }
   }
 }
+
+#sign-up-modal, #log-in-modal {
+  .modal-dialog {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+body.modal-open {
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}

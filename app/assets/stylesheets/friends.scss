@@ -1,0 +1,30 @@
+#friends {
+  width: 60%;
+
+  .friend {
+    display: flex;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    .portrait {
+      margin-right: 4%;
+    }
+
+    .full-name {
+      flex: 1;
+    }
+
+    .email {
+      flex: 3;
+    }
+
+    .unfriend {
+      justify-content: flex-end;
+      align-items: baseline;
+      font-size: 0.75em;
+    }
+  }
+}

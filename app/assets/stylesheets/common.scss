@@ -5,6 +5,11 @@ html, body {
 body {
   margin: 0;
   padding-top: 55px;
+  background: $gray;
+
+  > div {
+    height: 100%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -25,4 +30,5 @@ body {
 
 #content {
   padding: 10px;
+  height: 100%;
 }
