@@ -19,4 +19,5 @@
 //= require_tree ../templates
 //= require ./angular/shutter
 //= require ./angular/config
+//= require_tree ./angular/services
 //= require ./angular/controllers

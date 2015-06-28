@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resource :home, only: :index
 
   scope constraints: ->(request) { request.format.json? } do
-    resources :friends, only: [:index, :create]
-    patch 'friends/update_status/:user_id', to: 'friends#update_status'
+    get 'current_user', to: 'users#show'
+    get '/friends', to: 'users#friends'
+    resources :relationships, only: [:index, :create, :update, :destroy]
     resources :albums, only: [:index]
   end
 

@@ -6,9 +6,6 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <base href="/">
-  <script>
-    Shutter.currentUser = <%= raw current_user ? current_user.to_json : 'null' %>
-  </script>
 </head>
 <body>
 

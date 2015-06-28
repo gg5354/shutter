@@ -1,6 +1,10 @@
 #friends {
   width: 60%;
 
+  h4 {
+    color: $gray-faded;
+  }
+
   .friend {
     display: flex;
 
@@ -21,10 +25,13 @@
       flex: 3;
     }
 
-    .unfriend {
-      justify-content: flex-end;
-      align-items: baseline;
-      font-size: 0.75em;
+    .menu {
+      font-size: 1.25em;
+      button {
+        border: none;
+        background-color: inherit;
+      }
     }
   }
 }
+

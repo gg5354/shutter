@@ -1,33 +1,23 @@
-# refactor later
 class Shutter.Controller.UserCtrl extends Shutter.Controller.Base
-  dependencies: ['$scope', '$http']
+  dependencies: ['$scope', 'authentication']
 
   scopeMethods:
     logOut: ->
-      @$http.delete '/users/sign_out'
-            .success ->
-              Shutter.currentUser = null
-              window.location.replace('/')
-            .error ->
-              console.log 'error'
+      @authentication.logOut()
+        .success =>
+          window.location.replace('/')
 
     logIn: ->
       return unless @$scope.user
 
-      @$http.post '/users/sign_in', user: @$scope.user
-            .success (user) ->
-              Shutter.currentUser = user
-              $('#log-in-modal').modal('hide')
-            .error ->
-              console.log 'error'
+      @authentication.logIn @$scope.user
+            .success ->
+              window.location.reload()
 
     signUp: ->
       return unless @$scope.user
 
       delete @$scope.user.password_confirmation
-      @$http.post '/users', user: @$scope.user
+      @authentication.signUp @$scope.user
             .success (user) ->
-              Shutter.currentUser = user
-              $('#log-in-modal').modal('hide')
-            .error ->
-              console.log 'error'
+              window.location.reload()

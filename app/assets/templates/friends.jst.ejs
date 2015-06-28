@@ -1,6 +1,18 @@
 <div id="friends" ng-controller="FriendsCtrl">
   <div class="list-group">
-    <div ng-repeat="friend in friends" class="list-group-item friend">
+    <form name="friendRequestForm" class="input-group" ng-submit="friendRequestForm.$valid && addFriend(user)">
+      <input type="email" class="form-control" placeholder="Enter your friend's email" ng-model="user.email" required>
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">
+          <i class="fa fa-user-plus"></i>
+        </button>
+      </span>
+    </form>
+
+    <h4>Friends</h4>
+
+    <div ng-repeat="friend in friends.accepted" class="list-group-item friend">
       <div class="portrait">
         <span class="fa-stack fa-lg">
           <i class="fa fa-square-o fa-stack-2x"></i>
@@ -16,8 +28,43 @@
         <a href="mailto:{{ friend.email }}">{{ friend.email }}</a>
       </div>
 
-      <div class="unfriend">
-        <a href="#" ng-click="unfriend(friend)"><i class="fa fa-times"></i></a>
+      <div class="btn-group menu">
+        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">
+          <span class="fa fa-ellipsis-v"</span>
+        </button>
+
+        <ul class="dropdown-menu">
+          <li><a ng-click="unfriend(friend)" href="#">Unfriend</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-group" ng-show="friends.pending.length">
+    <h4>Pending Requests ...</h4>
+
+    <div class="list-group-item friend" ng-repeat="friend in friends.pending">
+      <div class="portrait">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-user fa-stack-1x"></i>
+        </span>
+      </div>
+
+      <div class="email">
+        <a href="mailto:{{ friend.email }}">{{ friend.email }}</a>
+      </div>
+
+      <div class="btn-group menu">
+        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">
+          <span class="fa fa-ellipsis-v"</span>
+        </button>
+
+        <ul class="dropdown-menu">
+          <li ng-show="isReceiver(friend.relationship)"><a href="#">Accept request</a></li>
+          <li ng-show="isReceiver(friend.relationship)"><a href="#">Decline request</a></li>
+          <li ng-show="!isReceiver(friend.relationship)"><a href="#">Cancel request</a></li>
+        </ul>
       </div>
     </div>
   </div>

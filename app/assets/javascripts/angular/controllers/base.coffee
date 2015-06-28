@@ -24,8 +24,10 @@ class Shutter.Controller.Base
       @$scope[k] = v.bind(@)
 
   __asyncLoad__: ->
+    return @asyncLoad() if typeof @asyncLoad is 'function'
+
     for a in @asyncLoad
       if typeof a is 'function'
-        a()
+        a.call @
       else
         @[a]()
