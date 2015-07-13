@@ -1,4 +1,6 @@
 class Shutter.Controller.FriendsCtrl extends Shutter.Controller.Base
+  NAME: 'FriendsCtrl'
+
   dependencies: ['$scope', '$http', '$q']
 
   asyncLoad: ->

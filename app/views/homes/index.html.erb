@@ -3,6 +3,7 @@
     <div class="container">
       <ul class="nav navbar-nav">
         <li><a href="/" class="logo">Shutter</a></li>
+        <li><span style="color: red;">This is a work in progress</span>
       </ul>
 
       <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl" ng-show="currentUser">
@@ -23,18 +24,16 @@
       </ul>
 
       <ul class="nav navbar-nav pull-right" ng-show="!currentUser">
-        <% if Rails.env.development? %>
-          <li><a id="fast-log-in" href="">Fast Log In</a></li>
+        <li><a id="fast-log-in" href="">Test User Account</a></li>
 
-          <script>
-            $(function() {
-              $('#fast-log-in').on('click', function() {
-                var service = angular.element('#fast-log-in').injector().get('authentication');
-                service.logIn({email: 'tuser@aol.com', password: 'password'});
-              });
+        <script>
+          $(function() {
+            $('#fast-log-in').on('click', function() {
+              var service = angular.element('#fast-log-in').injector().get('authentication');
+              service.logIn({email: 'tuser@aol.com', password: 'password'});
             });
-          </script>
-        <% end %>
+          });
+        </script>
         <li><a id="sign-up" href="">Sign Up</a></li>
         <li><a id="log-in" href="">Log In</a></li>
       </ul>

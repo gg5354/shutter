@@ -1,0 +1,18 @@
+#albums {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  > div {
+    border: 1px solid;
+    width: 318px;//397px;
+    height: 212px;//264px;
+    margin: 3px;
+  }
+
+  .album {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

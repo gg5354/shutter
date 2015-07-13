@@ -82,4 +82,4 @@ production:
   <<: *default
   database: shutter_production
   username: shutter
-  password: <%= ENV['PIXIE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['SHUTTER_DATABASE_PASSWORD'] %>

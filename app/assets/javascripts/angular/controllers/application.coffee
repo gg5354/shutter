@@ -1,4 +1,6 @@
 class Shutter.Controller.ApplicationCtrl extends Shutter.Controller.Base
+  NAME: 'ApplicationCtrl'
+
   dependencies: ['$scope', '$rootScope', 'authentication']
 
   initialize: ->

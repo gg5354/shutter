@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   scope constraints: ->(request) { request.format.json? } do
     get 'current_user', to: 'users#show'
     get '/friends', to: 'users#friends'
+
     resources :relationships, only: [:index, :create, :update, :destroy]
-    resources :albums, only: [:index]
+    resources :photos, only: [:destroy]
+    resources :albums, only: [:index] do
+      resources :photos
+    end
   end
 
   get "*any", to: 'homes#index', constraints: ->(request) { request.format.html? }

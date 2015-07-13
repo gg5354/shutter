@@ -1,4 +1,6 @@
 class Shutter.Controller.AlbumsCtrl extends Shutter.Controller.Base
+  NAME: 'AlbumsCtrl'
+
   dependencies: ['$scope', '$http']
 
   asyncLoad: ['fetchAlbums']

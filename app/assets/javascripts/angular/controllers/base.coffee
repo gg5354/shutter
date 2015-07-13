@@ -6,7 +6,7 @@ class Shutter.Controller.Base
 
   constructor: ->
     angular.module 'Shutter'
-           .controller @constructor.name, @dependencies.concat [@__beforeInitialize__]
+           .controller @NAME, @dependencies.concat [@__beforeInitialize__]
 
   __beforeInitialize__: =>
     for i in [0...arguments.length]

@@ -1,4 +1,6 @@
 class Shutter.Controller.UserCtrl extends Shutter.Controller.Base
+  NAME: 'UserCtrl'
+
   dependencies: ['$scope', 'authentication']
 
   scopeMethods:
